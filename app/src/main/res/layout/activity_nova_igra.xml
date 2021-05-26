@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".NovaIgraActivity">
+
+    <Button
+        android:id="@+id/Igr1"
+        android:layout_width="199dp"
+        android:layout_height="103dp"
+        android:background="#000000"
+        android:text="igr1scor"
+        app:backgroundTint="#00000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.014"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.281" />
+
+    <Button
+        android:id="@+id/Igr2"
+        android:layout_width="210dp"
+        android:layout_height="102dp"
+        android:text="igr2scor"
+        app:backgroundTint="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.281" />
+
+    <Button
+        android:id="@+id/Igra_button"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="Igra"
+        app:backgroundTint="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Zvanja_button"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Igr1"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/Zvanja_button"
+        android:layout_width="210dp"
+        android:layout_height="50dp"
+        android:text="ZVANJA"
+        app:backgroundTint="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Igr2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/back_button"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:text="POVRATAK"
+        app:backgroundTint="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/confirm_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Igra_button" />
+
+    <Button
+        android:id="@+id/confirm_button"
+        android:layout_width="210dp"
+        android:layout_height="100dp"
+        android:text="DONE"
+        app:backgroundTint="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Zvanja_button" />
+</androidx.constraintlayout.widget.ConstraintLayout>

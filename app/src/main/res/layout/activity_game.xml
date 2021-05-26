@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GameActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
+        <ListView
+            android:id="@+id/rezultatLista"
+            android:layout_width="407dp"
+            android:layout_height="327dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/Igr1txt"
+            android:layout_width="200dp"
+            android:layout_height="57dp"
+            android:width="200sp"
+            android:gravity="center"
+            android:text="Igrač 1"
+            app:layout_constraintBottom_toBottomOf="@+id/newgamebutton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rezultatLista"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/Igr2txt"
+            android:layout_width="210dp"
+            android:layout_height="57dp"
+            android:gravity="center"
+            android:text="Igrač 2"
+            app:layout_constraintBottom_toTopOf="@+id/igr2score"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/Igr1txt"
+            app:layout_constraintTop_toBottomOf="@+id/rezultatLista"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/newgamebutton"
+            android:layout_width="410dp"
+            android:layout_height="147dp"
+            android:text="NOVA IGRA"
+            app:backgroundTint="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/rezultatLista"
+            app:layout_constraintVertical_bias="0.783" />
+
+        <TextView
+            android:id="@+id/igr1score"
+            android:layout_width="198dp"
+            android:layout_height="71dp"
+            android:width="200sp"
+            android:gravity="center"
+            android:text="igr1score"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/igr2score"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Igr1txt"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/igr2score"
+            android:layout_width="211dp"
+            android:layout_height="72dp"
+            android:width="200sp"
+            android:gravity="center"
+            android:text="igr2score"
+            app:layout_constraintBottom_toTopOf="@+id/newgamebutton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rezultatLista"
+            app:layout_constraintVertical_bias="1.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
