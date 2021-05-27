@@ -24,10 +24,16 @@ public class NovaIgraActivity extends AppCompatActivity {
     Button BackButton;
     Button ConfirmButton;
 
-    int igr1score = 0;
-    int igr2score = 0;
+
+    public static int igr1score = 0;
+    public static int igr2score = 0;
+    int igr1zvanje = 0;
+    int igr2zvanje = 0;
     boolean igra = true;
     boolean zvanje = false;
+
+    public static int igr1duljina = SnapsActivity.brojigre;
+    public static int igr2duljina = SnapsActivity.brojigre;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,22 +52,14 @@ public class NovaIgraActivity extends AppCompatActivity {
         Igr1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(igra == true) {
-                    showDialog1();
-                } else if(igra == false){
-                    //dijalog za zvanja 1
-                }
+                showDialog1();
             }
         });
 
         Igr2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(igra == true) {
-                    showDialog2();
-                } else if(igra == false){
-                    //dijalog za zvanja 2
-                }
+                showDialog2();
             }
         });
 
@@ -100,79 +98,139 @@ public class NovaIgraActivity extends AppCompatActivity {
     }
 
     private void showDialog1() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Unesite broj");
+        if(igra == true) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Unesite broj");
 
-        final EditText input = new EditText(this);
-        input.setInputType(InputType.TYPE_CLASS_NUMBER);
-        builder.setView(input);
+            final EditText input = new EditText(this);
+            input.setInputType(InputType.TYPE_CLASS_NUMBER);
+            builder.setView(input);
 
-        builder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Igr1.setText(input.getText().toString());
-                String val = input.getText().toString();
-                igr1score = Integer.parseInt(val);
-            }
-        });
+            builder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    String val = input.getText().toString();
+                    igr1score = Integer.parseInt(val) + igr1zvanje;
+                    Igr1.setText(String.valueOf(igr1score));
+                    System.out.println(igr1score);
+                }
+            });
 
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.cancel();
-            }
-        });
+            builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.cancel();
+                }
+            });
 
-        builder.show();
+            builder.show();
+        } else if(zvanje == true){
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Unesite broj");
+
+            final EditText input = new EditText(this);
+            input.setInputType(InputType.TYPE_CLASS_NUMBER);
+            builder.setView(input);
+
+            builder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    String val = input.getText().toString();
+                    igr1zvanje = Integer.parseInt(val);
+                    igr1score += igr1zvanje;
+                    Igr1.setText(String.valueOf(igr1score));
+                    System.out.println(igr1score);
+                }
+            });
+
+            builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.cancel();
+                }
+            });
+
+            builder.show();
+        }
     }
 
     private void showDialog2() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Unesite broj");
+        if(igra == true) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Unesite broj");
 
-        final EditText input = new EditText(this);
-        input.setInputType(InputType.TYPE_CLASS_NUMBER);
-        builder.setView(input);
+            final EditText input = new EditText(this);
+            input.setInputType(InputType.TYPE_CLASS_NUMBER);
+            builder.setView(input);
 
-        builder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Igr2.setText(input.getText().toString());
-                String val = input.getText().toString();
-                igr2score = Integer.parseInt(val);
-            }
-        });
+            builder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    String val = input.getText().toString();
+                    igr2score = Integer.parseInt(val) + igr2zvanje;
+                    Igr2.setText(String.valueOf(igr2score));
+                    System.out.println(igr2score);
+                }
+            });
 
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.cancel();
-            }
-        });
+            builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.cancel();
+                }
+            });
 
-        builder.show();
+            builder.show();
+        } else if(zvanje == true){
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Unesite broj");
+
+            final EditText input = new EditText(this);
+            input.setInputType(InputType.TYPE_CLASS_NUMBER);
+            builder.setView(input);
+
+            builder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    String val = input.getText().toString();
+                    igr2zvanje = Integer.parseInt(val);
+                    igr2score += igr2zvanje;
+                    Igr2.setText(String.valueOf(igr2score));
+                    System.out.println(igr2score);
+                }
+            });
+
+            builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.cancel();
+                }
+            });
+
+            builder.show();
+        }
     }
 
     private void krajIgre() {
         if(igr1score>igr2score){
-            if(igr1score>=66 && igr2score>=66){
-                //igr1 ide za 1
-            } else if(igr1score>=66 && (igr2score>=33 && igr2score<66)){
-                //igr1 ide za 1
-            } else if(igr1score>=66 && (igr2score>0 && igr2score<33)){
-                //igr1 ide za 2
-            } else if(igr1score>=66 && (igr2score==0)){
-                //igr1 ide za 3
-            }
+                if (igr1score >= 66 && igr2score >= 66) {
+                    igr1duljina--;
+                } else if (igr1score >= 66 && (igr2score >= 33 && igr2score < 66)) {
+                    igr1duljina--;
+                } else if (igr1score >= 66 && (igr2score > 0 && igr2score < 33)) {
+                    igr1duljina -= 2;
+                } else if (igr1score >= 66 && (igr2score == 0)) {
+                    igr1duljina -= 3;
+                }
         } else if(igr2score>igr1score){
             if(igr2score>=66 && igr1score>=66){
-                //igr2 ide za 1
+                igr2duljina--;
             } else if(igr2score>=66 && (igr1score>=33 && igr1score<66)){
-                //igr2 ide za 1
+                igr2duljina--;
             } else if(igr2score>=66 && (igr1score>0 && igr1score<33)){
-                //igr2 ide za 2
+                igr2duljina-=2;
             } else if(igr2score>=66 && (igr1score==0)){
-                //igr2 ide za 3
+                igr2duljina-=3;
             }
         } else if(igr1score == igr2score){
             //ne znam
@@ -182,7 +240,7 @@ public class NovaIgraActivity extends AppCompatActivity {
 
     private void prebaciActivity() {
         Intent i = new Intent(NovaIgraActivity.this, GameActivity.class);
-        //prebaciti info od igraca i smanjiti score
+        NovaIgraActivity.this.finish();
         startActivity(i);
     }
 }

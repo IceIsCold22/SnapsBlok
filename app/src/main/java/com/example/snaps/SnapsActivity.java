@@ -18,6 +18,8 @@ public class SnapsActivity extends AppCompatActivity {
     TextInputEditText txtHint;
     Button doneButton;
 
+    public static int brojigre;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,11 +35,9 @@ public class SnapsActivity extends AppCompatActivity {
             public void onClick(View v) {
                String txt = txtInput.getEditText().getText().toString().trim();
                if(txt.equals("7") || txt.equals("9")) {
-                    Intent i = new Intent(SnapsActivity.this, GameActivity.class);
-                    Bundle bundle = new Bundle();
-                    bundle.putInt("gameduljina", Integer.valueOf(txt));
-                    i.putExtras(bundle);
-                    startActivity(i);
+                   SnapsActivity.brojigre = Integer.valueOf(txt);
+                   Intent i = new Intent(SnapsActivity.this, GameActivity.class);
+                   startActivity(i);
                 } else System.out.println("Unijeli ste krivi broj!");
             }
         });
