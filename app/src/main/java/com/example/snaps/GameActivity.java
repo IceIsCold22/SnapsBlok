@@ -23,7 +23,7 @@ public class GameActivity extends AppCompatActivity {
     NovaIgraActivity ni = new NovaIgraActivity();
 
 
-
+    int counter = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,8 +56,8 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void updateScores(ArrayList<String> novaLista, ArrayAdapter novaListaAdapter){
-        novaLista.add("Igrač 1: " + ni.igr1score + " Igrač 2: " + ni.igr2score + " Rezultat: " + ni.igr1duljina + "/" + ni.igr2duljina);
-      //  rezultatLista.setAdapter(novaListaAdapter);
+        novaLista.add(counter,"Igrač 1: " + ni.igr1score + " Igrač 2: " + ni.igr2score + " Rezultat: " + ni.igr1duljina + "/" + ni.igr2duljina);
+        counter++;
     }
 
     private void pocetakIgre(ArrayList<String> novaLista, ArrayAdapter novaListaAdapter){
