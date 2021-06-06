@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -18,7 +19,7 @@ public class SnapsActivity extends AppCompatActivity {
     TextInputEditText txtHint;
     Button doneButton;
 
-    public static int brojigre;
+    public static int brojigre = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +39,10 @@ public class SnapsActivity extends AppCompatActivity {
                    SnapsActivity.brojigre = Integer.valueOf(txt);
                    Intent i = new Intent(SnapsActivity.this, GameActivity.class);
                    startActivity(i);
-                } else System.out.println("Unijeli ste krivi broj!");
+                } else {
+                   Toast toast = Toast.makeText(getApplicationContext(),"Unijeli ste krivi broj!", Toast.LENGTH_SHORT);
+                   toast.show();
+               }
             }
         });
     }

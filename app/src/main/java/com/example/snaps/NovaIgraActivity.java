@@ -72,7 +72,7 @@ public class NovaIgraActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 IgraButton.setBackgroundColor(Color.parseColor("#134C16"));
-                ZvanjaButton.setBackgroundColor(Color.parseColor("#000000"));
+                ZvanjaButton.setBackgroundColor(Color.parseColor("#00FFFFFF"));
                 igra = true;
                 zvanje = false;
             }
@@ -82,7 +82,7 @@ public class NovaIgraActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ZvanjaButton.setBackgroundColor(Color.parseColor("#134C16"));
-                IgraButton.setBackgroundColor(Color.parseColor("#000000"));
+                IgraButton.setBackgroundColor(Color.parseColor("#00FFFFFF"));
                 igra = false;
                 zvanje = true;
             }
@@ -92,6 +92,13 @@ public class NovaIgraActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 krajIgre();
+            }
+        });
+
+        BackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                prebaciActivity();
             }
         });
 
@@ -140,7 +147,8 @@ public class NovaIgraActivity extends AppCompatActivity {
     private void pocetakIgre(){
         Igr1.setText(String.valueOf(igr1score));
         Igr2.setText(String.valueOf(igr2score));
-        IgraButton.setBackgroundColor(Color.parseColor("#134C16"));
+        igr1score = 0;
+        igr2score = 0;
     }
 
     private void showDialog1() {

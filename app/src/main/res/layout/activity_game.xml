@@ -8,61 +8,73 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="409dp"
-        android:layout_height="729dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="@drawable/snapssl"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ListView
             android:id="@+id/rezultatLista"
-            android:layout_width="407dp"
-            android:layout_height="327dp"
+            android:layout_width="256dp"
+            android:layout_height="162dp"
+            android:background="#00FFFFFF"
+            android:cacheColorHint="#FFFFFF"
+            android:foregroundGravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.479" />
+
+        <TextView
+            android:id="@+id/Igr1txt"
+            android:layout_width="wrap_content"
+            android:layout_height="57dp"
+            android:width="200sp"
+            android:gravity="center"
+            android:text="Igrač 1"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-            android:id="@+id/Igr1txt"
-            android:layout_width="200dp"
-            android:layout_height="57dp"
-            android:width="200sp"
-            android:gravity="center"
-            android:text="Igrač 1"
-            app:layout_constraintBottom_toBottomOf="@+id/newgamebutton"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rezultatLista"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.674" />
 
         <TextView
             android:id="@+id/Igr2txt"
             android:layout_width="210dp"
-            android:layout_height="57dp"
+            android:layout_height="55dp"
             android:gravity="center"
             android:text="Igrač 2"
-            app:layout_constraintBottom_toTopOf="@+id/igr2score"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/Igr1txt"
-            app:layout_constraintTop_toBottomOf="@+id/rezultatLista"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintStart_toStartOf="@+id/Igr1txt"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.67" />
 
         <Button
             android:id="@+id/newgamebutton"
             android:layout_width="410dp"
             android:layout_height="147dp"
+            android:background="#FFFFFF"
             android:text="NOVA IGRA"
-            app:backgroundTint="#000000"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+            app:backgroundTint="#00000000"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/rezultatLista"
-            app:layout_constraintVertical_bias="0.783" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
 
         <TextView
             android:id="@+id/igr1score"
@@ -71,12 +83,14 @@
             android:width="200sp"
             android:gravity="center"
             android:text="igr1score"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/igr2score"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.009"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Igr1txt"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.776" />
 
         <TextView
             android:id="@+id/igr2score"
@@ -85,9 +99,42 @@
             android:width="200sp"
             android:gravity="center"
             android:text="igr2score"
-            app:layout_constraintBottom_toTopOf="@+id/newgamebutton"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rezultatLista"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.776" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Posljednja igra"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.33" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ŠNAPS"
+            android:textColor="#FFFFFF"
+            android:textSize="70sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.121" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

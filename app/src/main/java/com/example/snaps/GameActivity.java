@@ -22,8 +22,8 @@ public class GameActivity extends AppCompatActivity {
 
     NovaIgraActivity ni = new NovaIgraActivity();
 
-
     int counter = 0;
+    public static int pobjednik = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,11 +36,12 @@ public class GameActivity extends AppCompatActivity {
         igr1scoretxt = (TextView) findViewById(R.id.igr1score);
         igr2scoretxt = (TextView) findViewById(R.id.igr2score);
 
-
         ArrayList<String> novaLista = new ArrayList<>();
         ArrayAdapter novaListaAdapter = new ArrayAdapter<String>(this, R.layout.textview, novaLista);
         rezultatLista.setAdapter(novaListaAdapter);
         pocetakIgre(novaLista, novaListaAdapter);
+
+        checkIfGameIsDone(NovaIgraActivity.igr1duljina, NovaIgraActivity.igr2duljina);
 
         newgamebutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,12 +52,14 @@ public class GameActivity extends AppCompatActivity {
     }
 
     private void newGameFunction(){
+        NovaIgraActivity.igr1score = 0;
+        NovaIgraActivity.igr2score = 0;
         Intent i = new Intent(GameActivity.this, NovaIgraActivity.class);
         startActivity(i);
     }
 
     public void updateScores(ArrayList<String> novaLista, ArrayAdapter novaListaAdapter){
-        novaLista.add(counter,"Igrač 1: " + ni.igr1score + " Igrač 2: " + ni.igr2score + " Rezultat: " + ni.igr1duljina + "/" + ni.igr2duljina);
+        novaLista.add(counter,"Igrač 1: " + ni.igr1score + " Igrač 2: " + ni.igr2score);
         counter++;
     }
 
@@ -66,5 +69,19 @@ public class GameActivity extends AppCompatActivity {
         updateScores(novaLista, novaListaAdapter);
     }
 
-
+    private void checkIfGameIsDone(int igr1duljina, int igr2duljina){
+        if(igr1duljina <= 0){
+            NovaIgraActivity.igr1duljina = 0;
+            pobjednik = 1;
+            Intent i = new Intent(GameActivity.this, activity_end.class);
+            GameActivity.this.finish();
+            startActivity(i);
+        } else if(igr2duljina <= 0){
+            NovaIgraActivity.igr2duljina = 0;
+            pobjednik = 2;
+            Intent i = new Intent(GameActivity.this, activity_end.class);
+            GameActivity.this.finish();
+            startActivity(i);
+        }
+    }
 }
